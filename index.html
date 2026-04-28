@@ -1,282 +1,1058 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Vishnu Prasad R, Product Support Team Lead focused on client communication, workflow improvement, and operational excellence.">
   <title>Vishnu Prasad R | Portfolio</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Cormorant+Garamond:wght@600;700&display=swap');
+
     :root {
-      --primary: #0f172a;
-      --accent: #3b82f6;
-      --bg: #f1f5f9;
-      --card: #ffffff;
+      --bg: #f5efe5;
+      --surface: rgba(255, 250, 243, 0.8);
+      --surface-strong: #fffaf3;
+      --text: #1f2933;
+      --muted: #5d6a72;
+      --line: rgba(83, 62, 44, 0.14);
+      --primary: #184e45;
+      --primary-soft: #d9ebe7;
+      --accent: #c46a3b;
+      --accent-soft: #f8dccd;
+      --shadow: 0 24px 50px rgba(73, 54, 38, 0.12);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --max-width: 1120px;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: var(--bg);
-      color: #1e293b;
+      font-family: "DM Sans", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(196, 106, 59, 0.16), transparent 30%),
+        radial-gradient(circle at top right, rgba(24, 78, 69, 0.14), transparent 28%),
+        linear-gradient(180deg, #efe4d4 0%, var(--bg) 38%, #fcf8f2 100%);
+      min-height: 100vh;
+      line-height: 1.6;
     }
 
-    nav {
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55), transparent 85%);
+      opacity: 0.28;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page-shell {
+      width: min(var(--max-width), calc(100% - 2rem));
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      padding-top: 0.85rem;
+      padding-bottom: 0.35rem;
+      background: linear-gradient(180deg, rgba(245, 239, 229, 0.92), rgba(245, 239, 229, 0));
+      backdrop-filter: blur(8px);
+    }
+
+    .nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
-      background: var(--primary);
-      color: white;
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      gap: 1rem;
+      padding: 0.95rem 1.2rem;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 999px;
+      background: rgba(24, 34, 41, 0.94);
+      backdrop-filter: blur(24px);
+      box-shadow:
+        0 18px 40px rgba(31, 41, 51, 0.24),
+        0 0 0 1px rgba(255, 255, 255, 0.04) inset;
     }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 1.5rem;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: var(--accent);
-    }
-
-    .logo {
-      height: 40px;
-      width: auto;
-      object-fit: contain;
-    }
-
-    header {
-      display: flex;
-      flex-direction: column;
+    .brand {
+      display: inline-flex;
       align-items: center;
-      text-align: center;
-      padding: 4rem 1rem 3rem;
-      background: linear-gradient(135deg, #1e293b, #3b82f6);
-      color: white;
+      gap: 0.8rem;
+      text-decoration: none;
+      color: #fefaf3;
     }
 
-    .profile-img {
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
+    .brand img {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
       object-fit: cover;
-      border: 5px solid white;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .brand span {
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255, 250, 243, 0.82);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.45rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: rgba(255, 250, 243, 0.96);
+      padding: 0.55rem 0.9rem;
+      border-radius: 999px;
+      font-weight: 500;
+      transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      background: rgba(255, 255, 255, 0.16);
+      color: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+    }
+
+    .hero {
+      padding: 4.2rem 0 2.4rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
+      gap: clamp(1.2rem, 2vw, 1.8rem);
+      align-items: start;
+    }
+
+    .hero-panel,
+    .hero-side,
+    .section-card {
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-panel {
+      padding: clamp(2rem, 4vw, 3.5rem);
+      background:
+        linear-gradient(145deg, rgba(255, 250, 243, 0.94), rgba(255, 245, 233, 0.78)),
+        #fffaf3;
+      position: relative;
+      isolation: isolate;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 1.15rem;
+    }
+
+    h1,
+    h2,
+    .stat-number {
+      font-family: "Cormorant Garamond", serif;
+      line-height: 0.96;
+      letter-spacing: -0.03em;
+    }
+
+    h1 {
+      font-size: clamp(2.55rem, 5.7vw, 4.2rem);
+      max-width: 13.5ch;
+      color: #1c2a2f;
       margin-bottom: 1rem;
-      transition: transform 0.3s;
+      line-height: 1.02;
+      text-wrap: balance;
+      letter-spacing: -0.025em;
     }
 
-    .profile-img:hover {
-      transform: scale(1.05);
+    .hero-copy {
+      max-width: 58ch;
+      color: var(--muted);
+      font-size: 1.04rem;
+      line-height: 1.65;
+      margin-bottom: 1.6rem;
     }
 
-    header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 0.5rem;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      opacity: 0.9;
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-bottom: 2rem;
     }
 
     .btn {
-      margin-top: 1rem;
-      padding: 0.6rem 1.2rem;
-      border: none;
-      background: white;
-      color: var(--primary);
-      border-radius: 20px;
-      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      min-height: 48px;
+      padding: 0.8rem 1.25rem;
+      border-radius: 999px;
       text-decoration: none;
-      font-size: 0.9rem;
-      transition: 0.3s;
+      font-weight: 700;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
     }
 
-    .btn:hover {
-      background: var(--accent);
-      color: white;
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 22px rgba(31, 41, 51, 0.12);
     }
 
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 2rem 1rem;
+    .btn-primary {
+      background: var(--primary);
+      color: #fefaf3;
     }
 
-    .card {
-      background: var(--card);
-      padding: 1.5rem;
-      border-radius: 12px;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-      transition: 0.3s;
+    .btn-secondary {
+      background: rgba(255, 250, 243, 0.7);
+      color: var(--text);
+      border: 1px solid var(--line);
     }
 
-    .card:hover {
-      transform: translateY(-3px);
-    }
-
-    h2 {
-      margin-bottom: 1rem;
-      color: var(--primary);
-    }
-
-    .grid {
+    .facts {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1rem;
     }
 
-    .skill-box {
-      background: #e2e8f0;
-      padding: 0.8rem;
-      border-radius: 8px;
-      text-align: center;
-      font-size: 0.9rem;
+    .fact {
+      padding: 0.95rem;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.68);
+      border: 1px solid rgba(83, 62, 44, 0.08);
+      min-width: 0;
     }
 
-    .contact {
+    .fact strong {
+      display: block;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      margin-bottom: 0.3rem;
+    }
+
+    .fact span {
+      color: var(--muted);
+      font-size: 0.93rem;
+      line-height: 1.5;
+    }
+
+    .hero-side {
+      background:
+        linear-gradient(180deg, rgba(27, 57, 52, 0.98), rgba(19, 35, 45, 0.96));
+      color: #fff9f1;
       display: grid;
-      gap: 12px;
+      grid-template-rows: auto auto 1fr auto;
+      min-height: auto;
+      align-self: start;
+      min-width: 0;
+    }
+
+    .portrait-wrap {
+      padding: clamp(1rem, 1.8vw, 1.35rem) clamp(1rem, 1.8vw, 1.35rem) 0;
+    }
+
+    .portrait-card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: calc(var(--radius-xl) - 6px);
+      padding: clamp(0.75rem, 1.2vw, 0.95rem);
+    }
+
+    .profile-img {
+      width: 100%;
+      aspect-ratio: 1 / 0.72;
+      object-fit: cover;
+      border-radius: 22px;
+      object-position: center 18%;
+    }
+
+    .hero-side-content {
+      padding: clamp(1rem, 2vw, 1.45rem) clamp(1.25rem, 2.2vw, 1.9rem) 0.55rem;
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .hero-side h2 {
+      color: #fff9f1;
+      font-size: clamp(2.4rem, 3.3vw, 3.2rem);
+      line-height: 0.98;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-side p {
+      color: rgba(255, 249, 241, 0.8);
+      font-size: clamp(1rem, 1.3vw, 1.08rem);
+      line-height: 1.62;
+    }
+
+    .role-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.52rem 0.82rem;
+      border-radius: 999px;
+      width: fit-content;
+      background: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 249, 241, 0.9);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      margin-bottom: 0.85rem;
+    }
+
+    .role-chip::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(196, 106, 59, 0.16);
+    }
+
+    .hero-side-summary {
+      padding: 0.25rem clamp(1.25rem, 2.2vw, 1.9rem) 1.2rem;
+      display: grid;
+      gap: 0.8rem;
+      align-content: start;
+    }
+
+    .hero-side-summary p {
+      font-size: clamp(1rem, 1.25vw, 1.06rem);
+      line-height: 1.6;
+      max-width: 32ch;
+    }
+
+    .hero-quote {
+      padding: 1.15rem clamp(1.25rem, 2.2vw, 1.9rem) 1.45rem;
+      color: rgba(255, 249, 241, 0.88);
+      font-size: clamp(0.98rem, 1.2vw, 1.04rem);
+      line-height: 1.65;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .hero-quote p {
+      padding-top: 0;
+    }
+
+    main {
+      padding-bottom: 3rem;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+      gap: 1.4rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .section-card {
+      background: var(--surface);
+      backdrop-filter: blur(14px);
+      padding: clamp(1.4rem, 2vw, 1.8rem);
+    }
+
+    main > .section-card {
+      margin-bottom: 1.4rem;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .section-header.stack {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.6;
+      max-width: 34ch;
+    }
+
+    .section-header.stack p {
+      max-width: 42ch;
+    }
+
+    #experience .section-header.stack p {
+      max-width: 56ch;
+    }
+
+    h2 {
+      font-size: clamp(2.3rem, 4vw, 3.3rem);
+      color: #19262c;
+    }
+
+    .about-copy {
+      display: grid;
+      gap: 1rem;
+      color: var(--muted);
+    }
+
+    .about-copy p,
+    .timeline-item ul,
+    .highlight-item p,
+    .skill-chip span,
+    .contact-text span {
+      font-size: 0.98rem;
+      line-height: 1.6;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.4rem;
+    }
+
+    .stat-card {
+      padding: 1.2rem 1.35rem;
+      border-radius: var(--radius-md);
+      background: var(--surface-strong);
+      border: 1px solid var(--line);
+    }
+
+    .stat-number {
+      display: block;
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 0.3rem;
+      line-height: 1.08;
+      padding-right: 0.2rem;
+    }
+
+    .stat-card:nth-child(2) .stat-number {
+      margin-left: -0.06em;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 0.96rem;
+      line-height: 1.55;
+    }
+
+    .highlight-list {
+      display: grid;
+      gap: 0.95rem;
+    }
+
+    .highlight-item {
+      padding: 1rem 1.05rem;
+      border-radius: var(--radius-md);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.46));
+      border: 1px solid rgba(83, 62, 44, 0.08);
+    }
+
+    .highlight-item strong {
+      display: block;
+      margin-bottom: 0.25rem;
+      color: #1f2f35;
+    }
+
+    .highlight-item p {
+      color: var(--muted);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 1.1rem 1.1rem 1.1rem 1.3rem;
+      border-left: 3px solid rgba(24, 78, 69, 0.22);
+      background: rgba(255, 255, 255, 0.55);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      top: 1.35rem;
+      left: -8px;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 5px rgba(196, 106, 59, 0.14);
+    }
+
+    .timeline-role {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+      margin-bottom: 0.55rem;
+    }
+
+    .timeline-role h3 {
+      font-size: 1.08rem;
+      color: #1f2f35;
+    }
+
+    .timeline-role span {
+      font-size: 0.82rem;
+      padding: 0.28rem 0.55rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #8d4723;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .timeline-company {
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 0.55rem;
+    }
+
+    .timeline-item ul {
+      padding-left: 1.15rem;
+      color: var(--muted);
+    }
+
+    .timeline-item li + li {
+      margin-top: 0.45rem;
+    }
+
+    .skills-wrap {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem;
+    }
+
+    .skill-chip {
+      padding: 1rem;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(24, 78, 69, 0.08), rgba(24, 78, 69, 0.02));
+      border: 1px solid rgba(24, 78, 69, 0.12);
+    }
+
+    .skill-chip strong {
+      display: block;
+      margin-bottom: 0.25rem;
+      color: #173f39;
+    }
+
+    .skill-chip span {
+      color: var(--muted);
+    }
+
+    .contact-card {
+      background:
+        linear-gradient(145deg, rgba(25, 38, 44, 0.96), rgba(18, 30, 37, 0.92));
+      color: #fffaf3;
+    }
+
+    .contact-card h2,
+    .contact-card .section-header p {
+      color: #fffaf3;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 0.9rem;
     }
 
     .contact-item {
       display: flex;
       align-items: center;
-      gap: 12px;
-      padding: 12px 14px;
-      background: #f1f5f9;
-      border-radius: 10px;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 1.1rem;
+      border-radius: 18px;
       text-decoration: none;
-      color: #1e293b;
-      transition: 0.2s;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
     }
 
-    .contact-item:hover {
-      background: #e2e8f0;
+    .contact-item:hover,
+    .contact-item:focus-visible {
       transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.16);
     }
 
-    .icon {
-      font-size: 18px;
+    .contact-main {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      min-width: 0;
+    }
+
+    .contact-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 255, 255, 0.12);
+      font-size: 1.05rem;
+      flex-shrink: 0;
+    }
+
+    .contact-text strong {
+      display: block;
+      color: #fffaf3;
+    }
+
+    .contact-text span {
+      color: rgba(255, 250, 243, 0.72);
+      word-break: break-word;
+    }
+
+    .contact-arrow {
+      color: rgba(255, 250, 243, 0.56);
+      font-size: 1.15rem;
+      flex-shrink: 0;
     }
 
     footer {
+      padding: 0 0 2.4rem;
+    }
+
+    .footer-card {
+      width: min(var(--max-width), calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 1rem 1.2rem;
+      border-radius: 999px;
       text-align: center;
-      padding: 1rem;
-      color: #64748b;
-      font-size: 0.9rem;
+      color: var(--muted);
+      background: rgba(255, 250, 243, 0.74);
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 25px rgba(73, 54, 38, 0.07);
     }
 
-    p {
-      margin-bottom: 20px;
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: rise 0.7s ease forwards;
     }
 
-    h3 {
-      margin-bottom: 15px;
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.22s; }
+    .delay-3 { animation-delay: 0.34s; }
+    .delay-4 { animation-delay: 0.46s; }
+
+    @keyframes rise {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
+    @media (max-width: 920px) {
+      .nav {
+        border-radius: 28px;
+        padding: 1rem;
+      }
+
+      .hero,
+      .section-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-side {
+        max-width: 100%;
+      }
+
+      .facts,
+      .stats-grid,
+      .skills-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page-shell {
+        width: min(var(--max-width), calc(100% - 1rem));
+      }
+
+      .topbar {
+        padding-top: 0.5rem;
+      }
+
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        border-radius: 26px;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .hero {
+        padding-top: 3rem;
+      }
+
+      .hero-side h2 {
+        font-size: clamp(2.1rem, 10vw, 2.7rem);
+      }
+
+      .hero-side-summary,
+      .hero-side-content,
+      .hero-quote {
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+      }
+
+      .hero-side-summary {
+        padding-top: 0.1rem;
+        padding-bottom: 1rem;
+      }
+
+      .hero-side-summary p {
+        max-width: none;
+        font-size: 1rem;
+        line-height: 1.55;
+      }
+
+      .hero-panel,
+      .section-card,
+      .hero-side {
+        border-radius: 24px;
+      }
+
+      .section-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .contact-item {
+        align-items: flex-start;
+      }
+    }
   </style>
 </head>
 <body>
-
-<nav>
-  <div style="display:flex; align-items:center; gap:10px;">
-    <a href="#">
-      <img src="logo.png" alt="Logo" class="logo">
-    </a>
-  </div>
-  <div>
-    <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
-
-<header>
-  <img src="profile.jpg" alt="Profile photo" class="profile-img">
-  <h1>Vishnu Prasad R</h1>
-  <p>Product Support Team Lead</p>
-  <a href="mailto:rvp.vishnuprasad@gmail.com" class="btn">Contact Me</a>
-</header>
-
-<div class="container">
-
-  <section id="about" class="card">
-    <h2>About Me</h2>
-    <p>I possess strong experience in coordinating with clients, internal stakeholders, and external collaborators, ensuring clear communication and seamless execution of projects. I am adept at managing cross-functional interactions and maintaining alignment between business requirements and deliverables. </p>
-    <p>I have a strong interest in technology and continuously strive to expand my knowledge by learning new tools and industry practices. My proactive approach to upskilling enables me to adapt quickly to evolving technological environments.</p>
-    <p>I have hands-on experience using tools like Jira and the Freshdesk Suite to manage both customer support and development workflows. I am experienced in handling customer queries, document them clearly, and coordinate with development teams to track, prioritize, and ensure timely resolution.</p>
-    <p>Additionally, I am detail-oriented, organized, and committed to delivering high-quality outcomes, with a focus on improving processes and enhancing overall operational efficiency.</p>
-  </section>
-
-  <section id="experience" class="card">
-    <h2>Experience</h2>
-
-    <h3>Product Support Team Lead</h3>
-    <p><strong>Deanta Publishing Services</strong></p>
-    <ul>
-      <li>Leading technical support teams</li>
-      <li>Managing publishing workflows</li>
-      <li>Resolving platform issues</li>
-    </ul>
-
-    <h3 style="margin-top:1rem;">Project Manager</h3>
-    <ul>
-      <li>Acted as the primary liaison for stakeholders, ensuring timely delivery, high-quality outputs, and continuous process improvements</li>
-      <li>Managed the end-to-end production process, from manuscript ingestion to final digital delivery</li>
-      <li>Collaborated closely with authors and publishers to ensure quality and on-time delivery</li>
-      <li>Oversaw project timelines, tracked progress, and ensured smooth stakeholder communication</li>
-    </ul>
-
-    <h3 style="margin-top:1rem;">Operations Executive</h3>
-    <ul>
-      <li>Managed Elsevier projects, ensuring adherence to quality and delivery standards</li>
-      <li>Coordinated with internal teams to support workflow execution and project completion</li>
-    </ul>
-  </section>
-
-  <section id="skills" class="card">
-    <h2>Skills</h2>
-    <div class="grid">
-      <div class="skill-box">Team Management</div>
-      <div class="skill-box">Problem Solving</div>
-      <div class="skill-box">Communication</div>
-      <div class="skill-box">Quality Assurance</div>
-      <div class="skill-box">Planning</div>
+  <div class="page-shell">
+    <div class="topbar reveal">
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#top" class="brand">
+          <img src="logo.png" alt="Vishnu Prasad R logo">
+          <span>Vishnu Prasad R</span>
+        </a>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
     </div>
-  </section>
 
-  <section id="contact" class="card">
-    <h2>Contact</h2>
-    <div class="contact">
-      <a href="tel:9150233978" class="contact-item">
-        <span class="icon">📞</span>
-        <span>Call Me</span>
-      </a>
+    <header class="hero" id="top">
+      <section class="hero-panel reveal delay-1">
+        <div class="eyebrow">Portfolio / Operations / Support Leadership</div>
+        <h1>Leading support teams with clarity, ownership, and calm execution</h1>
+        <p class="hero-copy">
+          I help create smoother customer experiences by bringing people, process, and technology together. My work is grounded in clear communication, organized workflows, and problem-solving.
+        </p>
+        <div class="hero-actions">
+          <a href="mailto:rvp.vishnuprasad@gmail.com" class="btn btn-primary">Email Me</a>
+          <a href="#experience" class="btn btn-secondary">View Experience</a>
+        </div>
+        <div class="facts">
+          <div class="fact">
+            <strong>Support Leadership</strong>
+            <span>Guiding teams through issue resolution and service quality.</span>
+          </div>
+            <div class="fact">
+              <strong>Workflow Focus</strong>
+              <span>Improving workflows for smoother support and delivery.</span>
+            </div>
+          <div class="fact">
+            <strong>Client Alignment</strong>
+            <span>Keeping stakeholders informed, confident, and on track.</span>
+          </div>
+        </div>
+      </section>
 
-      <a href="mailto:rvp.vishnuprasad@gmail.com" class="contact-item">
-        <span class="icon">📧</span>
-        <span>Email Me</span>
-      </a>
+      <aside class="hero-side reveal delay-2" aria-label="Profile summary">
+        <div class="portrait-wrap">
+          <div class="portrait-card">
+            <img src="profile.jpg" alt="Portrait of Vishnu Prasad R" class="profile-img">
+          </div>
+        </div>
+        <div class="hero-side-content">
+          <div>
+            <div class="role-chip">Support Leadership</div>
+            <h2>Product Support Team Lead</h2>
+          </div>
+        </div>
+        <div class="hero-side-summary">
+          <div>
+            <p>
+              Experienced in customer support operations, project coordination, publishing workflows, and cross-functional collaboration.
+            </p>
+          </div>
+        </div>
+        <div class="hero-quote">
+          <p>
+            "Strong outcomes are built on clear communication, consistent execution, and mutual respect, enabling teams to collaborate effectively and turn intent into meaningful results."
+          </p>
+        </div>
+      </aside>
+    </header>
 
-      <a href="https://www.linkedin.com/in/vishnu-prasad-r-630773210/" target="_blank" class="contact-item">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="icon" style="width:18px; height:18px;">
-        <span>LinkedIn Profile</span>
-      </a>
-    </div>
-  </section>
+    <main>
+      <div class="section-grid">
+        <section id="about" class="section-card reveal delay-2">
+          <div class="section-header stack">
+            <div>
+              <div class="eyebrow">About</div>
+              <h2>Quick to learn, adaptable, and client first mindset</h2>
+            </div>
+            <p>Focused on learning, adapting, and solving problems in ways that improve the client experience.</p>
+          </div>
+          <div class="about-copy">
+            <p>
+              I&apos;m curious about new technologies and how they can simplify workflows, solve modern challenges, and improve the client experience.
+            </p>
+            <p>
+              I adapt quickly to changing technologies, tools, and priorities, which helps me stay effective in fast-paced environments.
+            </p>
+            <p>
+              I take a client-first approach by communicating clearly, responding thoughtfully, and keeping work moving forward to build trust.
+            </p>
+            <p>
+              I enjoy problem-solving and approach challenges with patience and structure to find the right outcome.
+            </p>
+          </div>
+        </section>
 
-</div>
+        <aside class="section-card reveal delay-3" aria-label="Professional highlights">
+          <div class="section-header">
+            <div>
+              <div class="eyebrow">Highlights</div>
+              <h2>What I bring</h2>
+            </div>
+          </div>
+          <div class="highlight-list">
+            <div class="highlight-item">
+              <strong>Leadership</strong>
+              <p>Bringing clarity, accountability, and steady follow-through that helps teams stay focused and dependable.</p>
+            </div>
+            <div class="highlight-item">
+              <strong>Client and stakeholder alignment</strong>
+              <p>Keeping clients, teammates, and partners aligned through clear updates, shared priorities, and practical next steps.</p>
+            </div>
+            <div class="highlight-item">
+              <strong>Structured issue handling</strong>
+              <p>Documenting issues clearly, tracking progress carefully, and coordinating with the right people to keep resolutions moving.</p>
+            </div>
+            <div class="highlight-item">
+              <strong>Adaptability with tools and workflows</strong>
+              <p>Adapting quickly to new systems and using tools like Jira and Freshdesk to support organized, reliable delivery.</p>
+            </div>
+          </div>
+        </aside>
+      </div>
 
-<footer>
-  © 2026 Vishnu Prasad R
-</footer>
+      <section id="experience" class="section-card reveal delay-3">
+        <div class="section-header stack">
+          <div>
+            <div class="eyebrow">Experience</div>
+            <h2>Career path shaped by support, delivery, and coordination</h2>
+          </div>
+          <p>Roles that blend people management, publishing operations, and practical problem-solving.</p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-role">
+              <h3>Product Support Team Lead</h3>
+              <span>Current Role</span>
+            </div>
+            <p class="timeline-company">Deanta Publishing Services</p>
+            <ul>
+              <li>Lead technical support teams with a focus on responsiveness, clarity, and dependable service delivery.</li>
+              <li>Support and improve workflows that connect customer concerns with internal execution.</li>
+              <li>Help resolve platform issues by coordinating across teams and driving issues toward closure.</li>
+            </ul>
+          </article>
 
+          <article class="timeline-item">
+            <div class="timeline-role">
+              <h3>Project Manager</h3>
+              <span>Past Role</span>
+            </div>
+            <p class="timeline-company">Publishing and production operations</p>
+            <ul>
+              <li>Acted as the main liaison for stakeholders, balancing delivery timelines, quality expectations, and process improvement.</li>
+              <li>Managed the end-to-end production flow from manuscript intake to final digital delivery.</li>
+              <li>Worked closely with authors and publishers to support quality outcomes and reliable turnaround.</li>
+              <li>Tracked progress, managed dependencies, and kept communication smooth across contributors.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-role">
+              <h3>Operations Executive</h3>
+              <span>Earlier Role</span>
+            </div>
+            <p class="timeline-company">Elsevier-focused delivery support</p>
+            <ul>
+              <li>Managed project workflows with attention to quality standards and delivery commitments.</li>
+              <li>Coordinated with internal teams to keep production activity moving efficiently.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <div class="section-grid">
+        <section id="skills" class="section-card reveal delay-4">
+          <div class="section-header">
+            <div>
+              <div class="eyebrow">Skills</div>
+              <h2>Strengths that support reliable execution</h2>
+            </div>
+            <p>A mix of communication, planning, and operational thinking developed through client-facing roles.</p>
+          </div>
+          <div class="skills-wrap">
+            <div class="skill-chip">
+              <strong>Team and Stakeholder Management</strong>
+              <span>Building alignment across clients, internal teams, and collaborators.</span>
+            </div>
+            <div class="skill-chip">
+              <strong>Problem Solving and Decision Making</strong>
+              <span>Approaching issues methodically while keeping delivery moving forward.</span>
+            </div>
+            <div class="skill-chip">
+              <strong>Communication and Interpersonal Skills</strong>
+              <span>Creating clarity in updates, requirements, and issue discussions.</span>
+            </div>
+            <div class="skill-chip">
+              <strong>Documentation and Reporting</strong>
+              <span>Capturing issues and progress in a way teams can act on quickly.</span>
+            </div>
+            <div class="skill-chip">
+              <strong>Planning</strong>
+              <span>Organizing work, priorities, and timelines with steady follow-through.</span>
+            </div>
+            <div class="skill-chip">
+              <strong>Tool Familiarity</strong>
+              <span>Working effectively with Jira and Freshdesk Suite in support-driven workflows.</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="section-card contact-card reveal delay-4">
+          <div class="section-header">
+            <div>
+              <div class="eyebrow">Contact</div>
+              <h2>Let&apos;s connect</h2>
+            </div>
+            <p>Reach out for professional opportunities, collaboration, or a quick conversation.</p>
+          </div>
+          <div class="contact-list">
+            <a href="tel:+919150233978" class="contact-item" aria-label="Call Vishnu Prasad R">
+              <div class="contact-main">
+                <div class="contact-icon" aria-hidden="true">Call</div>
+                <div class="contact-text">
+                  <strong>Phone</strong>
+                  <span>+91 91502 33978</span>
+                </div>
+              </div>
+              <span class="contact-arrow" aria-hidden="true">-&gt;</span>
+            </a>
+
+            <a href="mailto:rvp.vishnuprasad@gmail.com" class="contact-item" aria-label="Email Vishnu Prasad R">
+              <div class="contact-main">
+                <div class="contact-icon" aria-hidden="true">Mail</div>
+                <div class="contact-text">
+                  <strong>Email</strong>
+                  <span>rvp.vishnuprasad@gmail.com</span>
+                </div>
+              </div>
+              <span class="contact-arrow" aria-hidden="true">-&gt;</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/vishnu-prasad-r-630773210/" target="_blank" rel="noreferrer" class="contact-item" aria-label="Open Vishnu Prasad R LinkedIn profile">
+              <div class="contact-main">
+                <div class="contact-icon" aria-hidden="true">in</div>
+                <div class="contact-text">
+                  <strong>LinkedIn</strong>
+                  <span>linkedin.com/in/vishnu-prasad-r-630773210</span>
+                </div>
+              </div>
+              <span class="contact-arrow" aria-hidden="true">-&gt;</span>
+            </a>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    <div class="footer-card">(c) 2026 Vishnu Prasad R.</div>
+  </footer>
 </body>
 </html>
